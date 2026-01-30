@@ -11,12 +11,17 @@ export const SocketProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        // 1. Inisialisasi Socket
-        // Ganti URL jika backend kamu bukan di port 5000
-        const newSocket = io('https://celebrated-analysis-production-7785.up.railway.app', {
-            transports: ['websocket'], // Paksa pakai websocket agar stabil
+        // --- PERHATIKAN URL INI ---
+        // Pastikan URL ini SAMA PERSIS dengan yang ada di Dashboard Railway Backend.
+        // Jika di dashboard URL-nya pendek (celebrated-analysis.up.railway.app), PAKAI YANG ITU.
+        // Jangan sampai beda satu huruf pun.
+        const URL = 'https://celebrated-analysis-production-7785.up.railway.app'; 
+
+        const newSocket = io(URL, {
+            transports: ['websocket'], 
             reconnectionAttempts: 5,
             reconnectionDelay: 1000,
+            withCredentials: true // ✅ TAMBAHKAN INI (Wajib jika backend credentials: true)
         });
 
         setSocket(newSocket);
@@ -28,6 +33,8 @@ export const SocketProvider = ({ children }) => {
 
         newSocket.on('connect_error', (err) => {
             console.error('❌ Socket Connection Error:', err);
+            // Tips: Jika error 404, berarti URL salah.
+            // Tips: Jika error websocket connection failed, coba hapus transports: ['websocket'] biarkan default.
         });
 
         // Cleanup saat aplikasi ditutup
