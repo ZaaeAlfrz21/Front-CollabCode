@@ -1,0 +1,153 @@
+:root {
+  --bg-dark: #1e1e1e;       /* Warna background utama (mirip VS Code) */
+  --bg-sidebar: #252526;    /* Warna sidebar */
+  --bg-header: #333333;     /* Warna header chat/panel */
+  --accent: #007acc;        /* Warna biru khas VS Code */
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+  --border: #3e3e42;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow: hidden; /* Hilangkan scrollbar window utama */
+}
+
+/* --- Layout Utama --- */
+.main-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* --- Sidebar (Kiri) --- */
+.sidebar {
+  width: 250px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.logo-area {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.room-info {
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.room-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.btn-copy {
+  margin-top: 5px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.btn-copy:hover {
+  background: #005f9e;
+}
+
+/* --- Editor Area (Tengah) --- */
+.editor-container {
+  flex: 1; /* Mengambil sisa ruang */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+}
+
+.editor-header {
+  height: 40px;
+  background-color: var(--bg-header);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* --- Chat Panel (Kanan) --- */
+.chat-panel {
+  width: 300px;
+  background-color: var(--bg-sidebar);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  height: 40px;
+  background-color: var(--bg-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+/* Placeholder pesan chat (visual saja dulu) */
+.message-bubble {
+  background: #3e3e42;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.chat-input-area {
+  padding: 10px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 5px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: #1e1e1e;
+  color: white;
+}
+
+.btn-send {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
