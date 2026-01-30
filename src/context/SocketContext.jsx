@@ -15,7 +15,7 @@ export const SocketProvider = ({ children }) => {
         // Pastikan URL ini SAMA PERSIS dengan yang ada di Dashboard Railway Backend.
         // Jika di dashboard URL-nya pendek (celebrated-analysis.up.railway.app), PAKAI YANG ITU.
         // Jangan sampai beda satu huruf pun.
-        const URL = 'https://celebrated-analysis-production-7785.up.railway.app'; 
+        const URL = 'https://collaabcode-production.up.railway.app'; 
 
         const newSocket = io(URL, {
             transports: ['websocket'], 
