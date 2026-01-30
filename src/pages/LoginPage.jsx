@@ -13,7 +13,7 @@ const LoginPage = () => {
     // --- BAGIAN PENTING: Mengambil URL dari .env ---
     // Jika pakai VITE, gunakan import.meta.env.VITE_API_URL
     // Jika pakai CRA (React Scripts), ganti jadi process.env.REACT_APP_API_URL
-    const API_URL = import.meta.env.VITE_API_URL || "https://celebrated-analysis-production-7785.up.railway.app"; 
+    const API_URL = import.meta.env.VITE_API_URL || "https://collaabcode-production.up.railway.app"; 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
