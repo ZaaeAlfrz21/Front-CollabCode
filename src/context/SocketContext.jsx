@@ -13,7 +13,7 @@ export const SocketProvider = ({ children }) => {
     useEffect(() => {
         // 1. Inisialisasi Socket
         // Ganti URL jika backend kamu bukan di port 5000
-        const newSocket = io('celebrated-analysis-production-7785.up.railway.app', {
+        const newSocket = io('https://celebrated-analysis-production-7785.up.railway.app', {
             transports: ['websocket'], // Paksa pakai websocket agar stabil
             reconnectionAttempts: 5,
             reconnectionDelay: 1000,
