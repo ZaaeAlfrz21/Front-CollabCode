@@ -19,7 +19,7 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             // Gunakan API_URL yang dinamis, bukan localhost
-            const res = await axios.post(`https://celebrated-analysis-production-7785.up.railway.app/api/auth/login`, { email, password });
+            const res = await axios.post(`${API_URL}/api/auth/login`, { email, password });
             
             const { token, user } = res.data; 
 
