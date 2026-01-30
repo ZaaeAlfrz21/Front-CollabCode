@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 import axios from 'axios'; 
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'celebrated-analysis-production-7785.up.railway.app';
 
 const UserPage = () => {
     // Ambil user, logout, dan login (untuk update state) dari Context
