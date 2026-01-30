@@ -11,7 +11,7 @@ const RegisterPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://celebrated-analysis-production-7785.up.railway.app/api/auth/register', { username, email, password });
+            await axios.post('https://collaabcode-production.up.railway.app/api/auth/register', { username, email, password });
             alert("Registrasi Berhasil! Silakan Login.");
             navigate('/login');
         } catch (err) {
