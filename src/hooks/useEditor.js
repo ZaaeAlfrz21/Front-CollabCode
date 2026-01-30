@@ -25,7 +25,7 @@ const useEditor = (roomId) => {
                 } : {};
                 
                 // Gunakan URL lengkap untuk menghindari masalah env variable di Vite
-                const baseURL = 'https://celebrated-analysis-production-7785.up.railway.app'; 
+                const baseURL = 'https://collaabcode-production.up.railway.app'; 
                 const res = await axios.get(`${baseURL}/api/rooms/${roomId}`, config);
                 
                 // Jika berhasil load
